@@ -13,7 +13,6 @@ async function getTransactions() {
     const db = await Database()
 
     const transactionsDB = await db.all("SELECT * FROM transactions")
-    console.log(transactionsDB)
     const transactions = transactionsDB.map((transaction) => new Transaction(transaction))
 
     await db.close()
@@ -21,10 +20,19 @@ async function getTransactions() {
     return transactions
 }
 
+async function deleteById(id) {
+    const db = await Database()
+
+    db.exec(`DELETE FROM transactions WHERE id = ${id}`)
+
+    await db.close()
+}
+
 
 
 module.exports = {
-    getTransactions
+    getTransactions,
+    deleteById
 }
 
 

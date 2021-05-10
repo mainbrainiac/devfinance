@@ -11,6 +11,18 @@ module.exports = {
         } catch(err) {
             console.log(err)
         }
-    }
+    },
+
+    async deleteTransaction(req, res) {
+        try {
+            const id = req.params.id
+            Transaction.deleteById(id)
+
+            res.writeHead(200)
+            res.end()
+        } catch(err) {
+            console.log(err)
+        }
+    } 
 
 }
