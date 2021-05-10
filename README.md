@@ -11,9 +11,15 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+
+## Front-End
 - HTML
 - CSS
 - JavaScript
+
+## Back-End
+- NodeJS
+- SQLITE
 
 ## 💻 Projeto
 
